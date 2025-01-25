@@ -21,9 +21,9 @@ jobs:
           cache: maven
 
       - name: Build
-        run: ./mvnw --settings ./.github/settings.xml -ntp -B --file pom.xml verify
+        run: mvn --settings ./.github/settings.xml -ntp -B --file pom.xml verify
 
       - name: Publish to GitHub Packages
-        run: mvn deploy -s .github/settings.xml
+        run: mvn deploy -s .github/settings.xml -ntp -B
         env:
           GITHUB_TOKEN: ${{ secrets.JRELEASER_GITHUB_TOKEN}}
