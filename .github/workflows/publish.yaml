@@ -1,0 +1,26 @@
+name: Publish Maven Artifact
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin' # You can use 'zulu' or other distributions
+          java-version: '21'      # Set your desired Java version
+          cache: maven
+
+      - name: Publish to GitHub Packages
+        run: mvn deploy -s settings.xml
+        env:
+          GITHUB_TOKEN: ${{ secrets.JRELEASER_GITHUB_TOKEN}}
