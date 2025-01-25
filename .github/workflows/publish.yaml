@@ -21,6 +21,6 @@ jobs:
           cache: maven
 
       - name: Publish to GitHub Packages
-        run: mvn deploy -s settings.xml
+        run: mvn deploy -s .github/settings.xml
         env:
           GITHUB_TOKEN: ${{ secrets.JRELEASER_GITHUB_TOKEN}}
