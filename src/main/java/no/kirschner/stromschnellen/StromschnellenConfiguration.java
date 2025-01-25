@@ -31,14 +31,20 @@ public class StromschnellenConfiguration {
 
     // Create dynamic spring.cloud.stream properties
     Map<String, Object> dynamicProperties = new HashMap<>();
+    log.info("spring.cloud.stream.bindings.{}-in-0.destination: {}", flussName, stromschnenlleName);
     dynamicProperties.put("spring.cloud.stream.bindings." + flussName + "-in-0.destination", stromschnenlleName);
+    log.info("spring.cloud.stream.bindings.{}-in-0.group: {}", flussName, stromschnenlleName + "Gruppe");
     dynamicProperties.put("spring.cloud.stream.bindings." + flussName + "-in-0.group", stromschnenlleName + "Gruppe");
+    log.info("spring.cloud.stream.bindings.{}-out-0.destination: {}", flussName, stromschnenlleName);
     dynamicProperties.put("spring.cloud.stream.bindings." + flussName + "-out-0.destination", stromschnenlleName);
+    log.info("spring.cloud.stream.kafka.binder.brokers: {}", "${KAFKA_BROKERS:localhost:9092}");
     dynamicProperties.put("spring.cloud.stream.kafka.binder.brokers", "${KAFKA_BROKERS:localhost:9092}");
+    log.info("spring.cloud.stream.function.definition: {}", flussName);
     dynamicProperties.put("spring.cloud.stream.function.definition", flussName);
 
     // Add properties to environment
     environment.getPropertySources().addFirst(new MapPropertySource("dynamicStromschnellenConfig", dynamicProperties));
+    log.info("Added dynamic properties to environment: {}", dynamicProperties);
 
     return new PropertySourcesPlaceholderConfigurer();
   }
