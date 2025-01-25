@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>no.kirschner</groupId>
-    <artifactId>stromschnellen</artifactId>
+    <artifactId>stromschnellen-spring-boot-starter</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>stromschnellen</name>
+    <name>stromschnellen-spring-boot-starter</name>
     <description>Torsten's interpretation of Fred George's Rapids and Rivers idea</description>
     <url>https://github.com/torstenk/stromschnellen</url>
     <licenses>
@@ -102,19 +102,6 @@
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>${project.parent.version}</version>
-                <configuration>
-                    <excludes>
-                        <exclude>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                        </exclude>
-                    </excludes>
-                </configuration>
-            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
