@@ -29,11 +29,11 @@ public class StromschnellenAutoConfiguration {
     String fluss = stromschnellenProperties.fluss();
 
     // Set the destination and group for the input binding
-    properties.put("spring.cloud.stream.bindings." + fluss + "-in-0.destination", name);
+    properties.put("spring.cloud.stream.bindings." + fluss + "-in-0.destination", env.getProperty("KAFKA_RAPID_TOPIC", name));
     properties.put("spring.cloud.stream.bindings." + fluss + "-in-0.group", name + "-group");
 
     // Set the destination for the output binding
-    properties.put("spring.cloud.stream.bindings." + fluss + "-out-0.destination", name);
+    properties.put("spring.cloud.stream.bindings." + fluss + "-out-0.destination", env.getProperty("KAFKA_RAPID_TOPIC", name));
 
     // Set the Kafka brokers
     properties.put("spring.cloud.stream.kafka.binder.brokers", env.getProperty("KAFKA_BROKERS", "localhost:9092"));
