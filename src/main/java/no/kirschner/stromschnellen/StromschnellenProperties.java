@@ -6,5 +6,5 @@ import org.springframework.boot.context.properties.bind.DefaultValue;
 @ConfigurationProperties(prefix = "stromschnelle")
 public record StromschnellenProperties (
         @DefaultValue("defaultStromschnellenName") String name,
-        @DefaultValue("defaultFlussName") String flussName) {
+        @DefaultValue("defaultFlussName") String fluss) {
 }
