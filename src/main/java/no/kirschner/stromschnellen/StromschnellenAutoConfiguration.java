@@ -30,7 +30,7 @@ public class StromschnellenAutoConfiguration {
 
     // Set the destination and group for the input binding
     properties.put("spring.cloud.stream.bindings." + fluss + "-in-0.destination", name);
-    properties.put("spring.cloud.stream.bindings." + fluss + "-in-0.group", name + "Group");
+    properties.put("spring.cloud.stream.bindings." + fluss + "-in-0.group", name + "-group");
 
     // Set the destination for the output binding
     properties.put("spring.cloud.stream.bindings." + fluss + "-out-0.destination", name);
