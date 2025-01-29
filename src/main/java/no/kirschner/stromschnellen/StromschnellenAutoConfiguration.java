@@ -39,7 +39,7 @@ public class StromschnellenAutoConfiguration {
     properties.put("spring.cloud.stream.kafka.binder.brokers", env.getProperty("KAFKA_BROKERS", "localhost:9092"));
 
     // Set the function definition
-    properties.put("spring.cloud.stream.function.definition", fluss);
+    properties.put("spring.cloud.function.definition", fluss);
 
     return properties;
   }
