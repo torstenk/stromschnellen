@@ -25,12 +25,12 @@ public class StromschnellenAutoConfiguration {
   public Map<String, String> streamProperties() {
     Map<String, String> properties = new HashMap<>();
 
-    String name = stromschnellenProperties.name();
-    String fluss = stromschnellenProperties.fluss();
+    String name = stromschnellenProperties.name().toLowerCase();
+    String fluss = stromschnellenProperties.fluss().toLowerCase();
 
     // Set the destination and group for the input binding
     properties.put("spring.cloud.stream.bindings." + fluss + "-in-0.destination", env.getProperty("KAFKA_RAPID_TOPIC", name));
-    properties.put("spring.cloud.stream.bindings." + fluss + "-in-0.group", name + "-group");
+    properties.put("spring.cloud.stream.bindings." + fluss + "-in-0.group", fluss + "-group");
 
     // Set the destination for the output binding
     properties.put("spring.cloud.stream.bindings." + fluss + "-out-0.destination", env.getProperty("KAFKA_RAPID_TOPIC", name));
