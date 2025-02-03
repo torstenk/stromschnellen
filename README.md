@@ -87,3 +87,11 @@ classDiagram
  }
 ```
 
+### The events
+
+[![CloudEvents](https://img.shields.io/badge/CloudEvents-Enabled-blue)](https://cloudevents.io/)
+[![Spring Cloud Stream](https://img.shields.io/badge/Spring%20Cloud%20Stream-Enabled-blue)](https://spring.io/projects/spring-cloud-stream)
+
+While Nav uses a proprietary event model that could have been inspired by Rich Hickey's approach to data in Clojure, I chose [CloudEvents](https://cloudevents.io/) for the event model and use [Spring Cloud Stream](https://spring.io/projects/spring-cloud-stream)
+
+

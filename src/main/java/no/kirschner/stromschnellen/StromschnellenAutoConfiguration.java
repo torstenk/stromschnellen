@@ -1,5 +1,7 @@
 package no.kirschner.stromschnellen;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
@@ -13,6 +15,8 @@ import java.util.Map;
 @AutoConfiguration
 @EnableConfigurationProperties(StromschnellenProperties.class)
 public class StromschnellenAutoConfiguration {
+
+  private static final Logger log = LoggerFactory.getLogger(StromschnellenAutoConfiguration.class);
 
   @Autowired
   private StromschnellenProperties stromschnellenProperties;
@@ -41,6 +45,7 @@ public class StromschnellenAutoConfiguration {
     // Set the function definition
     properties.put("spring.cloud.function.definition", fluss);
 
+    log.info("Configured properties: {}", properties);
     return properties;
   }
 }
