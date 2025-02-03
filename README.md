@@ -1,5 +1,13 @@
-# Rapids, Rivers, and Ponds
+# Rapids, Rivers, Sources and Ponds
 
+[![Java](https://img.shields.io/badge/Java-21-brightgreen)](https://adoptium.net/temurin/releases/)
+[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.4.2-brightgreen)](https://spring.io/projects/spring-boot)
+[![CloudEvents](https://img.shields.io/badge/CloudEvents-1.0.2-brightgreen)](https://cloudevents.io/)
+[![Spring Cloud Stream](https://img.shields.io/badge/Spring%20Cloud%20Stream-4.2.0-brightgreen)](https://spring.io/projects/spring-cloud-stream)
+[![Kafka](https://img.shields.io/badge/Kafka-Enabled-blue)](https://kafka.apache.org/)
+[![RabbitMQ](https://img.shields.io/badge/RabbitMQ-Enabled-blue)](https://www.rabbitmq.com/)
+[![Pulsar](https://img.shields.io/badge/Pulsar-Enabled-blue)](https://pulsar.apache.org/)
+## Overview
 How can I adapt Fred George's original idea of Rapids, Rivers, and Ponds simply and easily?
 
 ## Fred George's idea
@@ -88,9 +96,6 @@ classDiagram
 ```
 
 ### The events
-
-[![CloudEvents](https://img.shields.io/badge/CloudEvents-Enabled-blue)](https://cloudevents.io/)
-[![Spring Cloud Stream](https://img.shields.io/badge/Spring%20Cloud%20Stream-Enabled-blue)](https://spring.io/projects/spring-cloud-stream)
 
 While Nav uses a proprietary event model that could have been inspired by Rich Hickey's approach to data in Clojure, I chose [CloudEvents](https://cloudevents.io/) for the event model and use [Spring Cloud Stream](https://spring.io/projects/spring-cloud-stream)
 
