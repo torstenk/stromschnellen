@@ -21,6 +21,12 @@ How can I adapt Fred George's original idea of Rapids, Rivers, and Ponds simply 
 
 As I understand it, Fred George envisioed the rivers to use a seperate channel from the rapid(s).
 
+## Orchestration vs Choreography
+
+Rapids and Rivers are an example of micro service [Orchestration](https://camunda.com/blog/2023/02/orchestration-vs-choreography/#what-is-choreography-arlk) .
+
+
+
 ## The adaptation
 
 ![img.png](img.png) T
@@ -53,9 +59,9 @@ without changing the code.
 The Rapids are just a common destination name in the Spring Cloud stream configuration.
 
 ```properties
-spring.function.definition=anEventRiver
-dpring.cloud.stream.bindings.anEventRiver-in-0.destination=rapids
-spring.cloud.stream.bindings.anEventRiver-out-0.destination=rapids
+spring.cloud.function.definition=anEventRiver
+dpring.cloud.stream.bindings.anEventRiver-in-0.destination=${KAFKA_RAPID_TOPIC:rapids}
+spring.cloud.stream.bindings.anEventRiver-out-0.destination=${KAFKA_RAPID_TOPIC:rapids}
 spring.cloud.stream.bindings.anEventRiver-in-0.group=anEventRiver-group
 spring.cloud.stream.kafka.binder.brokers=${KAFKA_BROKERS:localhost:9092}
 ```
@@ -97,6 +103,10 @@ classDiagram
 
 ### The events
 
-While Nav uses a proprietary event model that could have been inspired by Rich Hickey's approach to data in Clojure, I chose [CloudEvents](https://cloudevents.io/) for the event model and use [Spring Cloud Stream](https://spring.io/projects/spring-cloud-stream)
+While Nav uses a proprietary event model that could have been inspired by Rich Hickey's approach to data in Clojure, I chose [CloudEvents](https://cloudevents.io/) for the event model and use [Spring Cloud Stream](https://spring.io/projects/spring-cloud-stream).
+CloudEvents offers a standard way to describe event data in a common way, and SDKs for different languages to work with them.
 
+### Polyglot
 
+While the above implementation suits the JVM implementation for Java and Kotlin, the same pattern can be implemented in other languages, e.g., Python, using the CloudEvents SDKs for those languages.
+Since our team uses Python a lot, I will also implement the same pattern in Python using the CloudEvents SDK for Python.
