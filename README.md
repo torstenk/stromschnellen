@@ -110,3 +110,5 @@ CloudEvents offers a standard way to describe event data in a common way, and SD
 
 While the above implementation suits the JVM implementation for Java and Kotlin, the same pattern can be implemented in other languages, e.g., Python, using the CloudEvents SDKs for those languages.
 Since our team uses Python a lot, I will also implement the same pattern in Python using the CloudEvents SDK for Python.
+
+Time permitting, I will also implement the same pattern in Go using the CloudEvents SDK for Clojure.
