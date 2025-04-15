@@ -46,7 +46,7 @@
         <java.version>21</java.version>
         <spring-cloud-stream.version>4.2.1</spring-cloud-stream.version>
         <cloudevents-spring.version>4.0.1</cloudevents-spring.version>
-        <uuid-creator.version>6.0.0</uuid-creator.version>
+        <uuid-creator.version>6.1.1</uuid-creator.version>
         <lombok.version>1.18.38</lombok.version>
         <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
         <maven-javadoc-plugin.version>3.11.2</maven-javadoc-plugin.version>
